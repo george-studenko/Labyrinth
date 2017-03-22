@@ -25,5 +25,16 @@ namespace LabyrinthGenerator
         {
 
         }
+        public void InitializeLabyrinth()
+        {
+            TheLabyrinth = new string[Rows, Columns];
+            for (int row = 0; row < Rows; row++)
+            {
+                for (int col = 0; col < Columns; col++)
+                {
+                    TheLabyrinth[row, col] = wall;
+                }
+            }
+        }
     }
 }
