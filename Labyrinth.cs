@@ -49,5 +49,19 @@ namespace LabyrinthGenerator
                 }
             }
         }
+        public void Print()
+        {
+            for (int row = 0; row < Rows; row++)
+            {
+                // creates a line break to start next row
+                Console.WriteLine("  ");
+                // adds some padding to the left of the screen
+                Console.Write("  ");
+                for (int col = 0; col < Columns; col++)
+                {
+                    Console.Write(TheLabyrinth[row, col]);
+                }                
+            }
+        }
     }
 }
