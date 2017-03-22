@@ -63,5 +63,37 @@ namespace LabyrinthGenerator
                 }                
             }
         }
+        public void CreateReferencePoint(string type)
+        {
+            int row = 0;
+            int col = 0;
+            
+            Random r = new Random();
+            int sideIndex = r.Next(0, 3);
+            
+            string side = sides[sideIndex];            
+            sides.Remove(side);
+            
+            switch (side)
+            {
+                case "TOP":
+                    row = 0;
+                    col = r.Next(1, Columns-2);                    
+                    break;
+                case "RIGHT":
+                    col = Columns - 1;
+                    row = r.Next(1, Rows - 2);
+                    break;
+                case "BOTTOM":
+                    row = Rows-1;
+                    col = r.Next(1, Columns - 2);
+                    break;
+                case "LEFT":
+                    col = 0;
+                    row = r.Next(1, Rows - 2);
+                    break;                
+            }
+            TheLabyrinth[row, col] = type;            
+        }
     }
 }
