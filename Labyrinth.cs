@@ -25,6 +25,19 @@ namespace LabyrinthGenerator
         {
 
         }
+        // Constructor 
+        /// <summary>
+        /// Creates a labyrinth and initializes it
+        /// </summary>
+        /// <param name="rows">Sets the total Rows for the labyrinth</param>
+        /// <param name="cols">Sets the total Columns for the labyrinth</param>
+        public Labyrinth(int rows, int cols)
+        {
+            this.Rows = rows;
+            this.Columns = cols;
+            InitializeLabyrinth();
+        }
+
         public void InitializeLabyrinth()
         {
             TheLabyrinth = new string[Rows, Columns];
